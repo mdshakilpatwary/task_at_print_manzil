@@ -32,8 +32,8 @@ class AuthenticatedSessionController extends Controller
         if(Auth::user()->role === 'admin' ){
             $url ='admin/dashboard';
         }
-        else if(Auth::user()->role === 'user'){
-            $url ='dashboard';
+        else if(Auth::user()->role === 'marchant'){
+            $url ='/dashboard';
         }
 
         return redirect()->intended($url);
