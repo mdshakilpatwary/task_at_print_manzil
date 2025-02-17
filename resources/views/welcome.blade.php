@@ -49,12 +49,27 @@
                     </header>
 
 <div class="pt-5">
-    <h2>Shop/Store name</h2>
-    <ul>
-        @foreach ($stores as $store)
-            <h3>{{$store->store_name}}</h3>
+    <h2>Shop/Store product</h2>
+    
+    <div class="row">
+
+        @foreach ($products as $product)
+            
+            
+            <div class="col-md-4">
+                <div class="card text-start">
+                    <div class="card-body">
+                        <h3 class="card-title">Product name:- {{$product->name}}</h3>
+                        <h4>Category name'- {{$product->category->category_name}}</h4>
+                        <h4>Store name:- {{$product->store->store_name}}</h4>   
+                                    
+                        </p>             
+                    </div>
+                </div>
+            </div>
         @endforeach
-    </ul>
+    </div>
+    
 </div>
 
 
