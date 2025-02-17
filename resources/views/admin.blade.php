@@ -21,6 +21,45 @@
         </form>
     </button>
 
+    <div class="p-4">
+        <h2>Admin Dashboard</h2>
+        <div class="row pt-3">
+            <div class="offset-md-2 col-md-8">
+                <table class="table">
+                    <thead>
+
+                        <tr>
+                            <th>serial no</th>
+                            <th>Merchant Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @if(count($users) > 0)
+                        @php
+                         $sl = 1;
+                        @endphp
+                        @foreach ($users as $user)
+                        <tr>
+                           <td>{{$sl++}}</td> 
+                           <td>{{$user->name}}</td> 
+                           <td>{{$user->email}}</td> 
+                        </tr>
+                        @endforeach
+                        @else
+                        <tr>
+
+                            <td colspan="3"><p class="text-center">no data found</p></td>
+                        </tr>
+                        @endif
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
